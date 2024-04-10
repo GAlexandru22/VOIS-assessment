@@ -11,3 +11,34 @@ I decided to divide the project in multiple steps:
 3. Performing data preprocessing and dividing it into training and testing sets
 4. Important factors for MHG
 5. Important factors for GY
+
+
+After doing a bit of research and asking some friends from the agriculture field I found out the meaning of the data
+from the .csv file.
+
+In the following lines I will define the abbreviation of each term in the columns of the .csv file:
+
+pH - measures the acidity of the soil
+IFP - integrated fruit production is a factor that shows the impact on the medium of agrochemicals
+NLP - is the quantity of nutrients that enter an ecosystem in a given period of time
+NGP - non-grain production is the amount of land that is shifted between crop and non-crop activities (I think)
+NGL - is the quantity of fuel used by the trucks that harvest and tend the crops
+NS - nitrogen and sulfur represents the amount of fertilizer used for the crops
+MHG - thousand seed weight is a factor used by farmers to estimate rates for seeding and to calculate the potential
+yield and quality of a crop
+GY - Grain yield is the measurement of how many crops have been harvested from the land
+
+After I have searched for every term I started the data preprocessing. What I did was that I took from the file only the
+data necessary. For example, I didn't take the name of the "Cultivar" because it wasn't useful for the upcoming models.
+Then I took all the data and divided it in two sets, one for training (80% of the data) and one for testing (the rest of
+the data 20%). While dividing into training and testing I made sure that I have the labels separated from the actual
+training data (MHG is used for the first model as label).
+While building the model I got stuck at the model training part. the problem was that all the data that I read from the
+file was cast as integer type which won't work in the .fit function of the keras model. This problem was solved by casting
+all the data to float32 format.
+
+For determining the MHG the most important factors are:
+one of the most important parameter for determining the MHG is the pH of the soil, followed by the NLP (Nutrient Loading
+Potential), NS (Nitrogen Sulfur) and GY (Grain Yield)
+
+For the GY the most important factors are basically the same as for MHG with the MHG included.
