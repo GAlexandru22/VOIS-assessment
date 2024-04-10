@@ -1,0 +1,13 @@
+For this project we need to use the following libraries:
+
+Tensorflow: for the implementation of the models and saving of them
+Pandas and os: For working with files and directories
+Numpy: for multiple operations with arrays
+
+I decided to divide the project in multiple steps:
+
+1. Observing the data and finding what the data actually means
+2. Finding ways to implement an algorithm for the problems that we are facing
+3. Performing data preprocessing and dividing it into training and testing sets
+4. Important factors for MHG
+5. Important factors for GY
